@@ -1,0 +1,134 @@
+<! DOCTYPE html >
+< html  lang = " en " >
+< tête >
+    < meta  charset = " UTF-8 " >
+    < meta  name = " viewport " content = " width = device-width, initial-scale = 1.0 " >
+    < link  rel = " stylesheet " href = " https://fonts.googleapis.com/css?family=Lato:400,700|Montserrat:900 " >
+    < titre > Document </ titre >
+    < style >
+
+corps {
+    couleur de fond : blanc;
+}
+  
+# timer {
+  couleur : # eeeeee ;
+  text-align : centre;
+  text-transform : majuscule;
+  famille de polices : 'Lato' , sans-serif;
+  taille de la police : .7 em ;
+  espacement des lettres : 5 px ;
+}
+
+. jours , . heures , . minutes , . secondes {
+  affichage : bloc en ligne;
+  rembourrage : 20 px ;
+  largeur : 100 px ;
+  rayon de la bordure : 5 px ;
+}
+
+. jours {
+  arrière - plan : # EF2F3C ;
+}
+
+. heures {
+  arrière - plan : # eeeeee ;
+  couleur : # 183059 ;
+}
+
+. minutes {
+  arrière - plan : # 276FBF ;
+}
+
+. secondes {
+  arrière - plan : # F0A202 ;
+}
+
+. nombres {
+  famille de polices : 'Montserrat' , sans-serif;
+  couleur :   # 183059 ;
+  taille de la police : 4 em ;
+  text-align : centre;
+}
+
+. blanc {
+  position : absolue;
+  arrière - plan :   # eeeeee ;
+  hauteur : 85 px ;
+  largeur : 75 px ;
+  gauche : 30 % ;
+  haut : 2 % ;
+}
+
+. rouge {
+  position : absolue;
+  arrière - plan :   # EF2F3C ;
+  gauche : 18 % ;
+  haut : 9 % ;
+  hauteur : 65 px ;
+  largeur : 70 px ;
+ 
+}
+
+. bleu {
+  position : absolue;
+  arrière - plan :   # 276FBF ;
+  hauteur : 80 px ;
+  largeur : 80 px ;
+  gauche : 60 % ;
+  haut : 5 % ;
+
+
+}
+
+
+    </ style >
+</ tête >
+< corps >
+    
+< div  id = " timer " >
+
+    < div  class = " days " > 
+        < div  id = " days " class = " numbers " >  </ div > jours </ div > 
+      < div  class = " heures " > 
+        < div   id = " hours " class = " numbers " >  </ div > heures </ div > 
+      < div  class = " minutes " > 
+        < div   id = " minutes " class = " numbers " >  </ div > minutes </ div > 
+      < div    class = " seconds " > 
+        < div  id = " seconds " class = " numbers " >  </ div > secondes </ div > 
+      </ div >
+
+</ div >
+
+</ corps >
+< script >
+     année  const =  nouvelle  date ( ) . getFullYear ( ) ;
+const  myDate  =  new  Date ( 'nov 26 2020 09:30:00' ) ;
+console . log ( myDate ) ;
+
+// compte à rebours
+let  timer  =  setInterval ( function ( )  {
+
+  // obtenir la date du jour
+  const  aujourd'hui  =  nouvelle  date ( ) . getTime ( ) ;
+
+  // obtenir la différence
+  const  diff  =  myDate  -  aujourd'hui ;
+
+  // math
+  laissez  jours  =  Math . plancher ( diff / ( 1000 * 60 * 60 * 24 ) ) ;
+  laissez  heures  =  Math . plancher ( ( diff % ( 1000 * 60 * 60 * 24 ) ) / ( 1000 * 60 * 60 ) ) ;
+  laissez  minutes  =  Math . plancher ( ( diff % ( 1000 * 60 * 60 ) ) / ( 1000 * 60 ) ) ;
+  laissez  secondes  =  Math . plancher ( ( diff % ( 1000 * 60 ) ) / 1000 ) ;
+
+  // afficher
+  document . getElementById ( "jours" ) . innerHTML = jours
+  document . getElementById ( "heures" ) . innerHTML = heures
+  document . getElementById ( "minutes" ) . innerHTML = minutes
+  document . getElementById ( "secondes" ) . innerHTML = secondes
+
+
+
+} ,  1 ) ;
+</ script >
+</ html >
